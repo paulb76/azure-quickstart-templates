@@ -1,15 +1,16 @@
 variables:
-  ARM_PASS: $(adminPass)
+  ARM_PASS: $(adminPassword)
 
 trigger:
 - none
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '101-webapp-linux-managed-mysql'
+    SourceFolder: '101-vm-simple-windows'
     Contents: '**'
     TargetFolder: '$(build.artifactstagingdirectory)'
+
