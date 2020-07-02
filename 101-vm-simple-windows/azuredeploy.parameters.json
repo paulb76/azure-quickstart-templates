@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmName": {
-      "value": "GEN-UNIQUE"
+      "value": "epbTestVM"
     },
     "adminUsername": {
-      "value": "GEN-UNIQUE"
+      "value": "adminepb"
     },
     "adminPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "$5Flacky10"
     },
     "dnsLabelPrefix": {
-      "value": "GEN-UNIQUE"
+      "value": "epbvm"
     }
   }
 }
