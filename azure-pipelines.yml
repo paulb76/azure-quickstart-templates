@@ -4,8 +4,7 @@ variables:
 trigger:
 - none
 
-pool:
-  vmImage: 'windows-latest'
+pool: MyPool
 
 steps:
 - task: CopyFiles@2
