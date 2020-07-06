@@ -1,5 +1,5 @@
 variables:
-  ARM_PASS: $(adminPassword)
+  ARM_PASS: 
 
 trigger:
 - none
@@ -16,13 +16,13 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'az connection nonprod'
-    subscriptionId: '09dee83d-9601-47e3-987c-fa3e50df110a'
+    azureResourceManagerConnection: 'Pay-As-You-Go(89b51123-0aac-4561-8ebf-df27c242fec1)'
+    subscriptionId: '89b51123-0aac-4561-8ebf-df27c242fec1'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'in-ea-arm-dev-rg'
-    location: 'Australia East'
+    resourceGroupName: 'myResourceGroup'
+    location: 'Australia Southeast'
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
     csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
-    overrideParameters: '-adminUsername $(adminUsername) -administratorLoginPassword $(ARM_PASS)'
+    overrideParameters: '-adminUsername $(adminUsername) -adminPassword $(adminPassword) -vmName $(vmName)'
     deploymentMode: 'Incremental'
